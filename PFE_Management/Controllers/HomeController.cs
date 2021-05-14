@@ -6,21 +6,40 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PFE_Management.Models;
+using Microsoft.EntityFrameworkCore;
+using PFE_Management.Data;
+using PFE_Management.Models.SchoolViewModels;
+using System.Data.Common;
 
 namespace PFE_Management.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ApplicationDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
             return View();
+        }
+
+
+        public async Task<ActionResult> About()
+        {
+            IQueryable<EnrollmentDateGroup> data =
+                from student in _context.Students
+                group student by student.EnrollmentDate into dateGroup
+                select new EnrollmentDateGroup()
+                {
+                    EnrollmentDate = dateGroup.Key,
+                    StudentCount = dateGroup.Count()
+                };
+
+            return View (await data.AsNoTracking().ToListAsync());
         }
 
         public IActionResult Privacy()
@@ -33,5 +52,16 @@ namespace PFE_Management.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+       /* public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }*/
     }
 }

@@ -548,3 +548,4 @@ C:\Users\ilias\OneDrive\Bureau\S4\.Net +Spring  +Design_Pattern(Kabbaj)\.Net Cor
 C:\Users\ilias\OneDrive\Bureau\S4\.Net +Spring  +Design_Pattern(Kabbaj)\.Net Core\developpement (gestion PFE  Git)\PFE_management\PFE_Management\obj\Debug\netcoreapp3.1\PFE_Management.csproj.CoreCompileInputs.cache
 C:\Users\ilias\OneDrive\Bureau\S4\.Net +Spring  +Design_Pattern(Kabbaj)\.Net Core\developpement (gestion PFE  Git)\PFE_management\PFE_Management\obj\Debug\netcoreapp3.1\PFE_Management.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ilias\OneDrive\Bureau\S4\.Net +Spring  +Design_Pattern(Kabbaj)\.Net Core\developpement (gestion PFE  Git)\PFE_management\PFE_Management\obj\Debug\netcoreapp3.1\PFE_Management.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ilias\OneDrive\Bureau\S4\.Net +Spring  +Design_Pattern(Kabbaj)\.Net Core\developpement (gestion PFE  Git)\PFE_management\PFE_Management\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
